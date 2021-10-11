@@ -1,0 +1,154 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+	<style>
+	p.one{
+		border-style: solid;
+			padding: 8px;
+			border-color: gray;
+			border-radius: 5px;
+			background-color: lavender;
+	}
+	form{
+		border-style: solid;
+			padding: 8px;
+			border-color: gray;
+			border-radius: 5px;
+			background-color: navajowhite;
+	}
+	table{
+		border-collapse: collapse;
+		width: 100%;
+		}
+	th {
+		padding: 8px;
+		text-align: left;
+		border-bottom: 1px solid black;
+		background-color: powderblue;
+	}
+		td {
+		padding: 8px;
+		text-align: left;
+		border-bottom: 1px solid black;
+		background-color: azure;
+	}
+	#sel1{
+		float: left;
+		border-radius: 5px;
+		padding: 5px 10px;
+		background-color: lightgoldenrodyellow;
+	}
+	#d1{
+		float: right;
+		direction: rtl;
+		padding: 5px 10px;
+		border-radius: 5px;
+		background-color: lightgoldenrodyellow;
+			}
+	#b1{
+		border-style: solid;
+			padding: 8px;
+			background-color: blue;
+			border-radius: 5px;
+			float: right;
+	}
+	#txtname{
+		border-radius: 5px;
+		padding: 5px 10px;		
+	}
+	#sel{
+		border-radius: 5px;
+		padding: 5px 10px;
+		margin: 20px;
+	}
+	#sel2{
+		border-radius: 5px;
+		padding: 5px 10px;
+	}
+	#btnnext{
+		border-style: solid;
+			padding: 8px;
+			background-color: blue;
+			border-radius: 5px;
+
+	}
+	#sel:hover{
+		border: 2px solid blue;
+	}
+	#sel2:hover{
+		border: 2px solid blue;
+	}
+	#sel1:hover{
+		border: 2px solid darkgoldenrod;
+	}
+	#d1:hover
+	{
+		border: 2px solid darkgoldenrod;
+	}
+	#txtname:hover
+	{
+		border: 2px solid blue;
+	}
+	#btnnext:hover{
+		border: 2px solid black;
+	}
+	</style>
+<body>
+    		<p class="one"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+</svg><i class="bi bi-cart"></i><font color="red"> <b> TENNIS STORE<b></font></p>
+<form>
+	<table>
+	    <select id="sel1">
+	    	<option value="" disabled selected hidden>-Choose Name-</option>
+	    	<option>Suthan</option>
+	    	<option>Raja</option>
+	    </select>
+	    <input type="date" id="d1"><br>
+	<tbody>
+	<tr>
+		<th>#</th>
+		<th>Brand</th>
+		<th>Color</th>
+		<th>Amount</th>
+	</tr>
+</tbody>
+	</table>
+</form>
+	<button id="b1"><font color="white">CONFIRM</font></button><br><br>
+	<select id="sel">
+	    	<option value="" disabled selected hidden>-Select Brand-</option>
+	    	<option>Babolat</option>
+	    	<option>Wilson</option>
+	    	<option>Head</option>
+	    	<option>Yonex</option>
+	    </select>
+	    <select id="sel2">
+	    	<option value="" disabled selected hidden>-Choose Color-</option>
+	    	<option>Red</option>
+	    	<option>Blue</option>
+	    	<option>Orange</option>
+	    </select>&nbsp;&nbsp;&nbsp;&nbsp;
+	    <input type="text" placeholder="Amount" id="txtname">&nbsp;&nbsp;&nbsp;&nbsp;
+	    <button id="btnnext"><font color="white">Next</font></button><br><br>
+</body>
+</html>
+<script>
+	$(document).ready(function(){
+		$("#btnnext").click(function(){
+			var n1 = $("#sel").val();
+			var n2 = $("#sel2").val();
+			var n3 = $("#txtname").val();
+			var n4 = '<tr><td>#</td><td>'+n1+'</td><td>'+n2+ '</td><td>'+n3+'</td></tr>';
+			$("tbody").append(n4);
+			$("#txtname").val('');
+			$("#txtname").focus();
+			$("#sel").val('');
+			$("#sel").focus();
+			$("#sel2").val('');
+			$("#sel2").focus();
+			$("#sel1").focus();
+		});
+	});
+</script>
